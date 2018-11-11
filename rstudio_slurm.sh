@@ -1,7 +1,7 @@
 #!/bin/bash
 ##
 ## Run Rstudio server through SOCKS5 tunnel on a SLURM allocated node.
-## Jake VanCampen, November 2018
+## Jake VanCampen, Kohl Kinning, November 2018
 ##
 set -euo pipefail
 
