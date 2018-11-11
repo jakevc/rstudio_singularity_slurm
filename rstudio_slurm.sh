@@ -41,7 +41,7 @@ echo "#!/bin/bash
 fuser -k 8787/tcp
 ml singularity
 singularity pull --name singularity-rstudio.simg shub://nickjer/singularity-rstudio
-singularity -v run --app rserver ~/singularity-rstudio.simg" > rserver.sh
+singularity run --app rserver ~/singularity-rstudio.simg" > rserver.sh
 
 # make sure it's executable 
 chmod -x rserver.sh
