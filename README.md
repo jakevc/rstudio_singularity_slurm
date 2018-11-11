@@ -21,7 +21,7 @@ In Firefox, go to Preferences > Advanced > Network and find the Connection setti
 	- Click "Manual Proxy Configuration" and type "localhost" in the SOCKS Host box. Type the port you intend to use when calling `./rstudio_slurm.sh` in the Port box. 
 	- Check the box that says "Proxy DNS when using SOCKS v5". 
 
-![](https://github.com/jakevc/rstudio_singularity_slurm/blob/master/firefox_setup.png) 
+![](https://github.com/jakevc/rstudio_singularity_slurm/blob/master/firefox_setup.png | width=500 height=300) 
 
 Once this is setup, run the server script like so:
 
