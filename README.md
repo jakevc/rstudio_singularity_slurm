@@ -18,10 +18,11 @@ To Access Rstudio server through the SOCKS5 tunnel, download firefox if you do n
 
 In Firefox, go to Preferences > Advanced > Network and find the Connection settings.
 
-	- Click "Manual Proxy Configuration" and type "localhost" in the SOCKS Host box. Type the port you intend to use when calling `./rstudio_slurm.sh` in the Port box. 
-	- Check the box that says "Proxy DNS when using SOCKS v5". 
+Click "Manual Proxy Configuration" and type "localhost" in the SOCKS Host box. Type the port you intend to use when calling `./rstudio_slurm.sh` in the Port box. 
 
-![](https://github.com/jakevc/rstudio_singularity_slurm/blob/master/firefox_setup.png | width=700, height=300) 
+Check the box that says "Proxy DNS when using SOCKS v5". 
+
+![](https://github.com/jakevc/rstudio_singularity_slurm/blob/master/firefox_setup.png | width=700) 
 
 Once this is setup, run the server script like so:
 
