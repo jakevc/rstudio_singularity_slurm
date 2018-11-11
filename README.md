@@ -22,7 +22,7 @@ Click "Manual Proxy Configuration" and type "localhost" in the SOCKS Host box. T
 
 Check the box that says "Proxy DNS when using SOCKS v5". 
 
-![](https://github.com/jakevc/rstudio_singularity_slurm/blob/master/firefox_setup.png | width=700) 
+<img src="https://github.com/jakevc/rstudio_singularity_slurm/blob/master/firefox_setup.png" width="400" height="790">
 
 Once this is setup, run the server script like so:
 
