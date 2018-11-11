@@ -38,25 +38,26 @@ shift $((OPTIND -1))
 echo "Writing server command." 
 # get commands to run Rstudio server on talapas 
 echo "#!/bin/bash
-fuser -k 8787/tcp
-ml singularity
+/usr/sbin/fuser -k 8787/tcp
+module load singularity
 singularity pull --name singularity-rstudio.simg shub://nickjer/singularity-rstudio
 singularity run --app rserver ~/singularity-rstudio.simg" > rserver.sh
 
 # make sure it's executable 
-chmod -x rserver.sh
+chmod 755 rserver.sh
 
 echo "Copying runscript to HPC."
-echo "scp rserver.sh $USER@$REMOTE:~/"
-scp rserver.sh $USER@$REMOTE:~/
+echo "rsync -av rserver.sh $USER@$REMOTE:~/"
+rsync -av rserver.sh $USER@$REMOTE:~/
 
 # remove rserver.sh from your machine
 rm rserver.sh
 
 echo "Starting Rstudio server on $NODE."
 # Start the Rserver
-ssh hpc -o RemoteCommand="srun -w $NODE rserver.sh" &  
+ssh $USER@$REMOTE -o RemoteCommand="srun -w $NODE rserver.sh" & 
+
 
 echo "Create SOCKS5 proxy tunnel from $NODE, through $REMOTE, to localhost:$PORT."
-# forawrd the port using a proxy command then open firefox
+# forward the port using a proxy command
 ssh -D $PORT -N -f -C -q -o ProxyCommand="ssh $USER@$REMOTE exec nc %h %p" $USER@$NODE
